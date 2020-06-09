@@ -1,6 +1,6 @@
 <Query Kind="Program" />
 
-// Heritage:
+// Inheritance:
 // --------------------------------
 // Description: 'is-a' relationship
 // --------------------------------
