@@ -15,6 +15,7 @@ This repository contains my _LINQPad_ queries.
 - ListPerformance
 - ModifiedClosure
 - OddEven
+- ParallelForLoop
 - Parenthesis
 - PrintConsoleSections
 - Stopwatch
