@@ -16,8 +16,7 @@ public class Chef {
 	public async static Task<bool> MakePizza() {
 		Console.WriteLine("Put the pizza in the oven");
 		
-		//await Task.Delay(4000);
-		await Task.Run(() => Thread.Sleep(4000));
+		await Task.Delay(4000);
 		
 		Console.WriteLine("Take the pizza out of the oven");
 		
