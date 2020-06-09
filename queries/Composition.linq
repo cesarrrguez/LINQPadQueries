@@ -4,53 +4,55 @@
 // -----------------------------------
 // Description: 'part-of' relationship 
 // -----------------------------------
-// UML: Wheel  ----- <filled> Car
+// UML: Engine  ----- <filled> Car
 // -----------------------------------
 
 void Main()
 {
-	Car car = new Car();
-	car.AddWheelToWheels();
-	car.AddWheelToWheels();
-	car.AddWheelToWheels();
-	car.AddWheelToWheels();
+	// Create Car
+	Car car = new Car("Tesla");
+		
+	// Print Car
+	car.Dump();
 	
+	// Remove Car
+	car = null;
+	GC.Collect();
+	
+	// Print Car
 	car.Dump();
 }
 
-public class Wheel
+public class Engine
 {
-	private int _wheels;
+	private string _type;
+	private int _power;
 	
-	public void AddWheel()
-	{
-		_wheels += 1;
+	public Engine(string type, int power) {
+		_type = type;
+		_power = power;
 	}
-
-	public int GetWheels()
-	{
-		return _wheels;
-	}
+	
+	public override string ToString() => $"Engine. Type: {_type}, Power: {_power}";
 }
 
 public class Car  
 {
-	public Wheel Wheel;
+	private string _name;
+	private Engine _engine;
 	
-	public Car()  
+	public Car(string name)  
 	{  
-		Wheel = new Wheel();
+		_name = name;
+		_engine = new Engine("Electric", 100);
 	}
 	
-	public void AddWheelToWheels()
-	{
-		Wheel.AddWheel();
+	public override string ToString() {
+		string result = $"Car. Name: {_name}";
+		
+		if (_engine != null)
+			result += $"\n{_engine}";
+			
+		return result;
 	}
-	
-	public int GetWheels()
-	{
-		return Wheel.GetWheels();
-	}
-	
-	public override string ToString() => $" Car. Wheels: {Wheel.GetWheels()}";
 }
