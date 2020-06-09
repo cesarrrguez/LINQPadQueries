@@ -19,6 +19,7 @@ void Main()
 	order.AddItem();
 	Customer customer2 = new Customer(order);
 	customer2.Dump();
+	order.Dump();
 	
 	Customer customer3 = new Customer();
 	customer3.Dump();
@@ -37,6 +38,8 @@ public class Order
     {
         return _items;
     }
+	
+	public override string ToString() => $" Order. Items: {GetItems()}";
 }
 
 public class Customer  
@@ -68,5 +71,5 @@ public class Customer
 		return _order.GetItems();
 	}
 	
-	public override string ToString() => $" Customer. Items: {GetItems()}";
+	public override string ToString() => $" Customer. Order Items: {GetItems()}";
 }
