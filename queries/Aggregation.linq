@@ -9,67 +9,67 @@
 
 void Main()
 {
-	Customer customer1 = new Customer();
-	customer1.AddItemToOrder();
-	customer1.AddItemToOrder();
-	customer1.Dump();
-
-	Order order = new Order();
-	order.AddItem();
-	order.AddItem();
-	Customer customer2 = new Customer(order);
-	customer2.Dump();
-	order.Dump();
+	// Create Customer
+	Customer customer = new Customer("James");
 	
-	Customer customer3 = new Customer();
-	customer3.Dump();
+	// Create Order
+	Order order = new Order(new Guid(), DateTime.Now);
+	
+	// Print Customer
+	customer.Dump();
+	
+	// Add order
+	customer.AddOrder(order);
+	
+	// Print Customer
+	customer.Dump();
+	
+	// Remove Customer
+	customer = null;
+	GC.Collect();
+	
+	// Print Customer
+	customer.Dump();
+	
+	// Print Order
+	order.Dump();
 }
 
 public class Order
 {
-	private int _items;
+	private Guid _id;
+	private DateTime _date;
 	
-	public void AddItem()
-    {
-        _items += 1;
-    }
+	public Order(Guid id, DateTime date) {
+		_id = id;
+		_date = date;
+	}
 	
-	public int GetItems()
-    {
-        return _items;
-    }
-	
-	public override string ToString() => $" Order. Items: {GetItems()}";
+	public override string ToString() => $"Order. Id: {_id}, Date: {_date}";
 }
 
 public class Customer  
 {
+	private string _name;
 	private Order _order;
 	
-	public Customer()  
-	{  
-		_order = new Order();
-	}
-	
-	public Customer(Order order)  
-	{  
-		_order = order;
-	}
-	
-	public void SetOrder(Order order)
-    {
-        _order = order;
-    }
-	
-	public void AddItemToOrder()
-    {
-        _order.AddItem();
-    }
-	
-	public int GetItems()
+	public Customer(string name)  
 	{
-		return _order.GetItems();
+		_name = name;
 	}
 	
-	public override string ToString() => $" Customer. Order Items: {GetItems()}";
+	public void AddOrder(Order order)
+    {
+		if (order != null)
+        	_order = order;
+    }
+	
+	public override string ToString() {
+		string result = $"Customer. Name: {_name}";
+		
+		if (_order != null)
+			result += $"\n{_order}";
+			
+		return result;
+	}
 }
