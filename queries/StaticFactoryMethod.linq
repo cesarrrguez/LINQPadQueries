@@ -2,13 +2,13 @@
 
 void Main()
 {
- 	var pizzaNormal = Pizza.GetPizza();
+     var pizzaNormal = Pizza.GetPizza();
     var pizzaLarge = Pizza.GetLargePizza();
     var pizzaSmall = Pizza.GetSmallPizza();
 
     pizzaNormal.Dump();
-	pizzaLarge.Dump();
-	pizzaSmall.Dump();
+    pizzaLarge.Dump();
+    pizzaSmall.Dump();
 }
 
 public class Pizza

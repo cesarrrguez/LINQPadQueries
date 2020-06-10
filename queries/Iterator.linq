@@ -14,8 +14,8 @@ IEnumerable<int> Fibonacci()
         b = c;
     }
 }
-		
+        
 IEnumerable<int> fibo = Fibonacci().Take(5);
 
 foreach (int i in fibo)
-	i.Dump();
+    i.Dump();

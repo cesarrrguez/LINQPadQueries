@@ -12,8 +12,8 @@ beginSection.Dump();
 stopwatch.Start();
 for (var i = 0; i < iterations; i++)
 {
-	Console.WriteLine("Thread={0}, i={1}", Thread.CurrentThread.ManagedThreadId, i);
-	Thread.Sleep(10);
+    Console.WriteLine("Thread={0}, i={1}", Thread.CurrentThread.ManagedThreadId, i);
+    Thread.Sleep(10);
 }
 stopwatch.Stop();
 $"\nTime elapsed: {stopwatch.ElapsedMilliseconds} milliseconds".Dump();
@@ -23,7 +23,7 @@ beginSection.Dump();
 stopwatch.Restart();
 Parallel.For(0, iterations, i =>
 {
-	Console.WriteLine("Thread={0}, i={1}", Thread.CurrentThread.ManagedThreadId, i);
+    Console.WriteLine("Thread={0}, i={1}", Thread.CurrentThread.ManagedThreadId, i);
     Thread.Sleep(10);
 });
 stopwatch.Stop();
