@@ -22,12 +22,16 @@ This repository contains my _LINQPad_ queries.
 
 ### _c#_ Programs
 
+- Aggregation
 - AsyncAwait
+- Composition
 - Delegate
 - Equals
 - Extensions
+- Factory Pattern
 - IEquatable
 - IndexOf
+- Inheritance
 - OperatorOverloading
 - Random
 - Round
