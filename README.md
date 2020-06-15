@@ -26,6 +26,7 @@ This repository contains my _LINQPad_ queries.
 - AsyncAwait
 - Composition
 - Delegate
+- EncapsulationCohesionCoupling
 - Equals
 - Extensions
 - Factory Pattern
