@@ -8,12 +8,14 @@ void Main()
     listOfObjects.Add(new MyObject{Property1 = 1, Property2 = 2, Property3 = 3});
     listOfObjects.Add(new MyObject{Property1 = 1, Property2 = 1, Property3 = 1});
     
-    foreach (var item in listOfObjects.Distinct()) {
+    foreach (var item in listOfObjects.Distinct())
+    {
         item.Dump();
     }
 }
 
-public class MyObject {
+public class MyObject
+{
     public int Property1 { get; set; }
     public int Property2 { get; set; }
     public int Property3 { get; set; }

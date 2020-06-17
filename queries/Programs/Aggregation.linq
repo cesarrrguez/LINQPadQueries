@@ -1,6 +1,6 @@
 <Query Kind="Program" />
 
-// Aggregation:
+// Aggregation
 // ---------------------------------
 // Description: 'has-a' relationship
 // ---------------------------------
@@ -40,7 +40,8 @@ public class Order
     private Guid _id;
     private DateTime _date;
     
-    public Order(Guid id, DateTime date) {
+    public Order(Guid id, DateTime date)
+    {
         _id = id;
         _date = date;
     }
@@ -53,7 +54,7 @@ public class Customer
     private string _name;
     private Order _order;
     
-    public Customer(string name)  
+    public Customer(string name)
     {
         _name = name;
     }
@@ -64,7 +65,8 @@ public class Customer
             _order = order;
     }
     
-    public override string ToString() {
+    public override string ToString()
+    {
         string result = $"Customer. Name: {_name}";
         
         if (_order != null)

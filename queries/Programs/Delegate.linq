@@ -19,31 +19,39 @@ void Main()
     PersonUtil.DisplayPeople("Seniors:", people, PersonUtil.IsSenior);
 }
 
-public class Person {
+public class Person
+{
     public string Name { get; set; }
     public int Age { get; set; }
 }
 
-public static class PersonUtil {
-    public static void DisplayPeople(string title, List<Person> people, FilterDelegate filter) {
+public static class PersonUtil
+{
+    public static void DisplayPeople(string title, List<Person> people, FilterDelegate filter)
+    {
         title.Dump();
 
-        foreach (Person person in people) {
-            if (filter(person)) {
+        foreach (Person person in people)
+        {
+            if (filter(person))
+			{
                 person.Dump();
             }
         }
     }
 
-    public static bool IsChild(Person person) {
+    public static bool IsChild(Person person)
+    {
         return person.Age < 18;
     }
 
-    public static bool IsAdult(Person person) {
+    public static bool IsAdult(Person person)
+    {
         return person.Age >= 18;
     }
 
-    public static bool IsSenior(Person person) {
+    public static bool IsSenior(Person person)
+    {
         return person.Age >= 65;
     }
 }

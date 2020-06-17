@@ -12,8 +12,10 @@ static async Task Main()
     Console.WriteLine("Food finished");
 }
 
-public class Chef {
-    public async static Task<bool> MakePizza() {
+public class Chef
+{
+    public async static Task<bool> MakePizza()
+    {
         Console.WriteLine("Put the pizza in the oven");
         
         await Task.Delay(4000);
@@ -23,7 +25,8 @@ public class Chef {
         return true;
     }
     
-    public static void MakeDrink() {
+    public static void MakeDrink()
+    {
         Console.WriteLine("Start making the drink");
         
         Thread.Sleep(2000);

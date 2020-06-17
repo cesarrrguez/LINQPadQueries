@@ -1,6 +1,6 @@
 <Query Kind="Program" />
 
-// Composition:
+// Composition
 // -----------------------------------
 // Description: 'part-of' relationship 
 // -----------------------------------
@@ -28,7 +28,8 @@ public class Engine
     private string _type;
     private int _power;
     
-    public Engine(string type, int power) {
+    public Engine(string type, int power)
+    {
         _type = type;
         _power = power;
     }
@@ -47,7 +48,8 @@ public class Car
         _engine = new Engine("Electric", 100);
     }
     
-    public override string ToString() {
+    public override string ToString()
+    {
         string result = $"Car. Name: {_name}";
         
         if (_engine != null)

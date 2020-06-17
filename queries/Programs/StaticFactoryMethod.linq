@@ -2,7 +2,7 @@
 
 void Main()
 {
-     var pizzaNormal = Pizza.GetPizza();
+    var pizzaNormal = Pizza.GetPizza();
     var pizzaLarge = Pizza.GetLargePizza();
     var pizzaSmall = Pizza.GetSmallPizza();
 
