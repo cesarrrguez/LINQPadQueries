@@ -30,7 +30,7 @@ This repository contains my _LINQPad_ queries.
 - EncapsulationCohesionCoupling
 - Equals
 - Extensions
-- Factory Pattern
+- FactoryPattern
 - IEquatable
 - IndexOf
 - Inheritance
