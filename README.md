@@ -34,6 +34,7 @@ This repository contains my _LINQPad_ queries.
 - IEquatable
 - IndexOf
 - Inheritance
+- IoC
 - OperatorOverloading
 - Random
 - Round
