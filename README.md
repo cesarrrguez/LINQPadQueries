@@ -22,11 +22,17 @@ This repository contains my _LINQPad_ queries.
 
 ### _c#_ Programs
 
+- SOLID
+  - SRP (Single Responsibility Principle)
+  - OCP (Open/Closed Principle)
+  - LSP (Liskov Substitution Principle)
+  - ISP (Interface Segregation Principle)
+  - DIP (Dependency Inversion Principle)
 - Aggregation
 - AsyncAwait
 - Composition
 - Delegate
-- DependencyInyection
+- DI (Dependency Injection)
 - EncapsulationCohesionCoupling
 - Equals
 - Extensions
@@ -34,9 +40,10 @@ This repository contains my _LINQPad_ queries.
 - IEquatable
 - IndexOf
 - Inheritance
-- IoC
+- IoC (Inversion of Control)
 - OperatorOverloading
 - Random
+- Recursion
 - Round
 - StaticFactoryMethod
 
