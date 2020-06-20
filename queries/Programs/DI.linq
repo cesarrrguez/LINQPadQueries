@@ -1,6 +1,6 @@
 <Query Kind="Program" />
 
-// DI (Dependency Inyection)
+// DI (Dependency Injection)
 // --------------------------------------------------------
 // It is a form of IoC, where implementations are passed to
 // an object on which they "depend" to behave correctly.
@@ -20,30 +20,30 @@ void Main()
         Description = "These are the weekly progress"
     };
     
-    // Not dependency inyection
+    // Not dependency injection
     var newsletterService = new NewsLetterService();
     newsletterService.SendNewsLetter(user, newsletter);
     
-    // Dependency inyection
+    // Dependency injection
     var messageSender = Factory.CreateMessageSender();
         
-    // Constructor inyection
-    var newsletterServiceDI = new NewsLetterServiceDI(messageSender);
-    newsletterServiceDI.SendNewsLetter(user, newsletter);
+    // Constructor injection
+    var newsletterService_DI = new NewsLetterService_DI(messageSender);
+    newsletterService_DI.SendNewsLetter(user, newsletter);
     
-    // Setter inyection
-    var newsletterServiceDI2 = new NewsLetterServiceDI2();
-    newsletterServiceDI2.SetmessageSender(messageSender);
-    newsletterServiceDI2.SendNewsLetter(user, newsletter);
+    // Setter injection
+    var newsletterService_DI2 = new NewsLetterService_DI2();
+    newsletterService_DI2.SetmessageSender(messageSender);
+    newsletterService_DI2.SendNewsLetter(user, newsletter);
     
-    // Method inyection 
-    var newsletterServiceDI3 = new NewsLetterServiceDI3();
-    newsletterServiceDI3.SendNewsLetter(user, newsletter, messageSender);
+    // Method injection 
+    var newsletterService_DI3 = new NewsLetterService_DI3();
+    newsletterService_DI3.SendNewsLetter(user, newsletter, messageSender);
     
-    // Interface inyection
-    var newsletterServiceDI4 = new NewsLetterServiceDI4();
-    newsletterServiceDI4.Inject(messageSender);
-    newsletterServiceDI4.SendNewsLetter(user, newsletter);
+    // Interface injection
+    var newsletterService_DI4 = new NewsLetterService_DI4();
+    newsletterService_DI4.Inject(messageSender);
+    newsletterService_DI4.SendNewsLetter(user, newsletter);
 }
 
 public class User
@@ -66,7 +66,7 @@ public class EmailClient
     }
 }
 
-// Not dependency inyection
+// Not dependency injection
 // Not IoC here. The service is who create the messageSender instance and maintane it
 // --------------------------------------------------------------------------------
 public class NewsLetterService
@@ -79,7 +79,7 @@ public class NewsLetterService
     }
 }
 
-// Dependency inyection
+// Dependency injection
 // ------------------------
 public interface IMessageSender
 {
@@ -111,13 +111,13 @@ public static class Factory
     }
 }
 
-// Constructor inyection
+// Constructor injection
 // ------------------------
-public class NewsLetterServiceDI
+public class NewsLetterService_DI
 {
     private readonly IMessageSender _messageSender;
     
-    public NewsLetterServiceDI(IMessageSender messageSender)
+    public NewsLetterService_DI(IMessageSender messageSender)
     {
         _messageSender = messageSender;
     }
@@ -128,9 +128,9 @@ public class NewsLetterServiceDI
     }
 }
 
-// Setter inyection
+// Setter injection
 // ------------------------
-public class NewsLetterServiceDI2
+public class NewsLetterService_DI2
 {
     private IMessageSender _messageSender;
         
@@ -145,9 +145,9 @@ public class NewsLetterServiceDI2
     }
 }
 
-// Method inyection
+// Method injection
 // ------------------------
-public class NewsLetterServiceDI3
+public class NewsLetterService_DI3
 {   
     public void SendNewsLetter(User user, Newsletter newsletter, IMessageSender messageSender)
     {
@@ -155,14 +155,14 @@ public class NewsLetterServiceDI3
     }
 }
 
-// Interface inyection
+// Interface injection
 // ------------------------
 public interface ImessageSenderInjector
 {
     void Inject(IMessageSender messageSender);
 }
 
-public class NewsLetterServiceDI4 : ImessageSenderInjector
+public class NewsLetterService_DI4 : ImessageSenderInjector
 {
     private IMessageSender _messageSender;
     
