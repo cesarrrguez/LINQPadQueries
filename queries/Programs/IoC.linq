@@ -39,7 +39,7 @@ public interface IProductService
     void RegisterNewProduct(Product product);
 }
 
-// App.Domain.Services       
+// App.Application.Services       
 public class ProductService : IProductService
 {
     private readonly IProductRepository _productRepository;
