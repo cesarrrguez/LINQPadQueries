@@ -4,6 +4,12 @@
 
 This repository contains my _LINQPad_ queries.
 
+## Project status
+
+This _LINQPad_ repository was moved to https://github.com/cesarrrguez/CSharpScripts. This repository is not longer being actively maintained, please submit pull requests to the _CSharpScripts_ repository.
+
+## Queries
+
 ### _c#_ Statements
 
 - AbsoluteValue
